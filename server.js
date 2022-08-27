@@ -29,12 +29,15 @@ const assembly = axios.create({
         "content-type": "application/json",
     },
 });
-function queueAudio(url)
-  assembly.post("/transcript", {
+
+async function queueAudio(url)
+  return new Promise(()=>{
+    assembly.post("/transcript", {
           audio_url: url
       })
-      .then((res) => {return res.data.id;})
+      .then((res) => {resolve();})
       .catch((err) => console.error(err));
+  }
 }
 
 async function getAudio(id) {
@@ -46,6 +49,5 @@ async function getAudio(id) {
 
 var a = queueAudio("https://bit.ly/3yxKEIY");
 setInterval(()=>{
-
   
 }, 10000)
