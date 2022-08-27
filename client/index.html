@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Video Summarizer Home</title>
-        <link rel="icon" href="/favicon.png">
-        <!-- 		DIST CSS -->
-        <link href="./dist.css" rel="stylesheet">
-        <!-- 		 JQUERY -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <!-- 		 JAVASCRIPT -->
-        <script src="main.js"></script>
-    </head>
+	<head>
+		<title>Video Summarizer</title>
+		<link rel="icon" href="assets/favicon.png">
+		<!-- 		DIST CSS -->
+		<link href="./dist.css" rel="stylesheet">
+		<!-- 		 JQUERY -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- 		 JAVASCRIPT -->
+		<script src="main.js"></script>
+	</head>
 
-    <body class=" flex items-center justify-center h-full">
-        <!--         <div class="navbar">
+	<body class=" flex items-center justify-center h-full" style="background-image: url('assets/background.png');">
+		<!--         <div class="navbar">
             <nav>
                 <ul>
                     <li><a class="active" href="index.html">
@@ -26,25 +26,21 @@
             </nav>
         </div> -->
 
-        <div id="start-card" class="absolute bottom-1/8 top-1/8 rounded-xl shadow-2xl w-3/4 flex bg-white">
-            <div class="image"><img class="p-5" src="assets/logo2.png"></div>
-            <div class="text">
-                <h1 class="text-center font-bold text-6xl p-28">Video Summarizer</h1>
-                <button id="open-select-video" class="">Try It Out</button>
-            </div>
-        </div>
+		<div id="start-card" class="absolute bottom-1/8 top-1/8 rounded-xl shadow-2xl w-3/4 grid grid-cols-3 bg-white">
+			<img class="image p-5 col-start-1" src="assets/logo.png">
+			<div class="col-start-2 col-span-2">
+				<h1 class="antialiased font-extrabold text-6xl p-10 text-center">Video Summarizer</h1>
+				<p class="antialiased text-center text-xl">Convenient and Free! For students, By students.<p>
+				<p class="antialiased font-normal text-lg text-center p-10">Engage with your video homework assignments in a new, engaging
+					way! With the click of a few buttons,
+					anyone can use the Video Summarizer to save time and capture key information and concepts.
+					</p>
+			</div>
+			<div class="col-start-2 col-span-2 text-center">
+				<button id="open-select-video" class="antialiased rounded-xl p-5 shadow-lg bg-rose-400 hover:bg-rose-200 hover:border-rose-300 border-rose-500 border-2">Let's Go!</button>
+			</div>
+		</div>
 
-        <div id="select-video-card"
-            class="absolute bottom-1/8 top-1/8 rounded-xl shadow-2xl w-3/4 flex bg-white">
-            <h1>Select A Video For Transcription</h1>
-            <button>Select From File System</button>
-        </div>
-
-
-
-        <!--             <p>Engage with your video homework assignments in a new, engaging way! With the click of a few buttons,
-                anyone can use the Video Summarizer to save time and capture key information and concepts.
-                <br><br><span>Convenient and Free; For students, By students.</span></p> -->
-    </body>
+	</body>
 
 </html>
