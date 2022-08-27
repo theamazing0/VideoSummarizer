@@ -1,6 +1,6 @@
-(document).ready(function () {
+/*(document).ready(function () {
 	
-})
+})*/
 // //////////////////
 // fetch("/trans", {
 //   method: "POST",  

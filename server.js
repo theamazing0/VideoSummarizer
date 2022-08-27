@@ -22,4 +22,4 @@ app.listen(3000, () => {
 
 });
 
-assemblyAi.convertUrl("https://www.youtube.com/watch?v=EqviBPG2uPE")
+//assemblyAi.convertUrl("https://www.youtube.com/watch?v=EqviBPG2uPE")
