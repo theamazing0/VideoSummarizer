@@ -1,6 +1,5 @@
 // Add Your API Keys Here
 
 // AssemblyAI API Key
-var assemblyAiKey = "INSERT SECRET KEY HERE"
-
+const assemblyAiKey = process.env['assembly']
 module.exports = {assemblyAiKey}
