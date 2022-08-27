@@ -1,8 +1,22 @@
 $(document).ready(function() {
-	$("#select-video-card").hide();
+    // Open Select-video
 	$("#open-select-video").click(function() {
-		$("#select-video-card").show();
-		$("#start-card").hide();
+        // Hide Start Card
+        $("#start-card").addClass("hidden");
+        $("#start-card").removeClass("grid");
+        // Show Select-video Card
+        $("#select-video-card").addClass("grid");
+        $("#select-video-card").removeClass("hidden");
+	});
+    // Open Show Transcript
+    $("#open-show-transcript").click(function() {
+        console.log("got here")
+        // Hide Start Card
+        $("#select-video-card").addClass("hidden");
+        $("#select-video-card").removeClass("grid");
+        // Show Select-video Card
+        $("#show-transcript-card").addClass("grid");
+        $("#show-transcript-card").removeClass("hidden");
 	});
 });
 // //////////////////
