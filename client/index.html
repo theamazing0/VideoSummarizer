@@ -4,6 +4,8 @@
 	<head>
 		<title>Video Summarizer</title>
 		<link rel="icon" href="assets/favicon.png">
+		<!--        BOOSTRAP ICONS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 		<!-- 		DIST CSS -->
 		<link href="./dist.css" rel="stylesheet">
 		<!-- 		 JQUERY -->
@@ -26,10 +28,11 @@
             </nav>
         </div> -->
 
-		<div id="start-card" class="absolute bottom-1/8 top-1/8 rounded-xl shadow-2xl w-3/4 grid grid-cols-3 bg-white dark:bg-slate-900">
+		<div id="start-card" class="absolute bottom-1/8 top-1/8 rounded-xl shadow-2xl w-3/4 grid grid-cols-3 bg-white">
 			<img class="image p-5 col-start-1" src="assets/logo.png">
 			<div class="col-start-2 col-span-2">
-				<h1 class="antialiased font-extrabold text-6xl p-10 text-center text-black dark:text-white">Video Summarizer</h1>
+				<h1 class="antialiased font-extrabold text-6xl p-10 text-center text-black">Video
+					Summarizer</h1>
 				<p class="antialiased text-center text-xl">Convenient and Free! For students, By students.
 				<p>
 				<p class="antialiased font-normal text-lg text-center p-10">Engage with your video homework assignments
@@ -45,20 +48,25 @@
 			</div>
 		</div>
 
-		<div id="select-video-card" class="absolute bottom-1/8 top-1/8 rounded-xl shadow-2xl w-3/4 bg-white hidden dark:bg-slate-900">
-			<h1 class="antialiased font-bold text-4xl p-10 text-center">Select A Video</h1>
-			<!-- <div class="col-start-2 col-span-2 text-center">
-				<button id="open-select-video"
-					class="antialiased rounded-xl p-5 shadow-lg bg-rose-400 hover:bg-rose-200 hover:border-rose-300 border-rose-500 border-2">Let's
-					Go!</button>
-			</div> -->
-			<div>
+		<div id="select-video-card" class="absolute bottom-1/8 top-1/8 rounded-xl shadow-2xl w-3/4 bg-white hidden">
+			<h1 class="antialiased font-bold text-4xl p-10 text-center">Select A Video</h1>	
+			<div class="px-20">
+				<div class="p-10 border-2 rounded-lg text-center">
+					<label for="fileInputBox">
+						<i class="bi-upload text-6xl"></i>
+						<h1 class="antialiased text-xl p-5">Click to Browse</h1>
+						<input id="fileInputBox" class="hidden" type="file" accept="video/*, audio/*"/>
+					</label>
+				</div>
+			</div>
+			<div class="text-center">
 				<button id="open-show-transcript"
 					class="antialiased rounded-xl p-5 shadow-lg bg-rose-400 hover:bg-rose-200 hover:border-rose-300 border-rose-500 border-2">Summarize</button>
 			</div>
 		</div>
 
-		<div id="show-transcript-card" class="animate-pulse absolute bottom-1/8 top-1/8 rounded-xl shadow-2xl w-3/4 bg-white hidden dark:bg-slate-900">
+		<div id="show-transcript-card"
+			class="animate-pulse absolute bottom-1/8 top-1/8 rounded-xl shadow-2xl w-3/4 bg-white hidden">
 			<h1 class=" antialiased font-bold text-4xl p-10 text-center">Select A Video</h1>
 			<!-- <div class="col-start-2 col-span-2 text-center">
 				<button id="open-select-video"
