@@ -20,34 +20,3 @@ app.post('/datablahblah', (req, res) => {
 app.listen(3000, () => {
   console.log('server started');
 });
-
-//assembly AI
-const assembly = axios.create({
-    baseURL: "https://api.assemblyai.com/v2",
-    headers: {
-        authorization: secrets.assemblyAiKey,
-        "content-type": "application/json",
-    },
-});
-
-async function queueAudio(url)
-  return new Promise(()=>{
-    assembly.post("/transcript", {
-          audio_url: url
-      })
-      .then((res) => {resolve();})
-      .catch((err) => console.error(err));
-  }
-}
-
-async function getAudio(id) {
-  assembly
-    .get(`/transcript/${id}`)
-    .then((res) => console.log(res.data))
-    .catch((err) => console.error(err));
-}
-
-var a = queueAudio("https://bit.ly/3yxKEIY");
-setInterval(()=>{
-  
-}, 10000)
