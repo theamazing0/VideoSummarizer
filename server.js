@@ -45,4 +45,7 @@ async function getAudio(id) {
 }
 
 var a = queueAudio("https://bit.ly/3yxKEIY");
+setInterval(()=>{
 
+  
+}, 10000)
