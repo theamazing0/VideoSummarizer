@@ -19,6 +19,7 @@ app.post('/datablahblah', (req, res) => {
 // 
 app.listen(3000, () => {
   console.log('server started');
+
 });
 
 //assembly AI
@@ -84,3 +85,4 @@ async function asyncCall() {
 }
 
 //asyncCall();
+});
