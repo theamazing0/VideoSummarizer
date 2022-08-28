@@ -8,5 +8,4 @@
 // Replit Way
 const assemblyAiKey = process.env['assembly']
 
-
 module.exports = {assemblyAiKey}

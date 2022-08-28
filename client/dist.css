@@ -584,12 +584,20 @@ video {
   display: grid;
 }
 
+.contents {
+  display: contents;
+}
+
 .hidden {
   display: none;
 }
 
 .h-full {
   height: 100%;
+}
+
+.max-h-80 {
+  max-height: 20rem;
 }
 
 .w-3\/4 {
@@ -631,6 +639,10 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.overflow-scroll {
+  overflow: scroll;
 }
 
 .rounded-xl {
@@ -682,6 +694,10 @@ video {
   text-align: center;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .align-middle {
   vertical-align: middle;
 }
@@ -716,6 +732,10 @@ video {
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-light {
+  font-weight: 300;
 }
 
 .text-black {

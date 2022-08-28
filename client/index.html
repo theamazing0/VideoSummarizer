@@ -10,24 +10,13 @@
 		<link href="./dist.css" rel="stylesheet">
 		<!-- 		 JQUERY -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
 		<!-- 		 JAVASCRIPT -->
 		<script src="main.js"></script>
 	</head>
 
 	<body class=" flex items-center justify-center h-full" style="background-image: url('assets/background.png');">
-		<!--         <div class="navbar">
-            <nav>
-                <ul>
-                    <li><a class="active" href="index.html">
-                            &#9750; Home</a></li>
-                    <li><a href="about.html">&#9744; About</a></li>
-
-                    <li><a href="index.html#generate">&#9872; Demo</a></li>
-                    <li><a href="contact.html">&#9743; Contact</a></li>
-                </ul>
-            </nav>
-        </div> -->
-
 		<div id="start-card" class="absolute bottom-1/8 top-1/8 rounded-xl shadow-2xl w-3/4 grid grid-cols-3 bg-white">
 			<img class="image p-5 col-start-1" src="assets/logo.png">
 			<div class="col-start-2 col-span-2">
@@ -49,13 +38,14 @@
 		</div>
 
 		<div id="select-video-card" class="absolute bottom-1/8 top-1/8 rounded-xl shadow-2xl w-3/4 bg-white hidden">
-			<h1 class="antialiased font-bold text-4xl p-10 text-center">Select A Video</h1>	
+			<h1 class="antialiased font-bold text-4xl p-10 text-center">Select A Video</h1>
 			<div class="px-20">
 				<div class="p-10 border-2 rounded-lg text-center">
 					<label for="fileInputBox">
 						<i class="bi-upload text-6xl"></i>
 						<h1 class="antialiased text-xl p-5">Click to Browse</h1>
-						<input id="fileInputBox" class="hidden" type="file" accept="video/*, audio/*"/>
+						<p id="fileSelectedDisplay" class="antialiased text-lg font-light">No File Selected</p>
+						<input id="fileInputBox" class="hidden" type="file" accept="video/*, audio/*" />
 					</label>
 				</div>
 			</div>
@@ -65,14 +55,19 @@
 			</div>
 		</div>
 
-		<div id="show-transcript-card"
-			class="animate-pulse absolute bottom-1/8 top-1/8 rounded-xl shadow-2xl w-3/4 bg-white hidden">
-			<h1 class=" antialiased font-bold text-4xl p-10 text-center">Select A Video</h1>
-			<!-- <div class="col-start-2 col-span-2 text-center">
-				<button id="open-select-video"
-					class="antialiased rounded-xl p-5 shadow-lg bg-rose-400 hover:bg-rose-200 hover:border-rose-300 border-rose-500 border-2">Let's
-					Go!</button>
-			</div> -->
+		<div id="show-transcript-card" class="absolute bottom-1/8 top-1/8 rounded-xl shadow-2xl w-3/4 bg-white hidden">
+			<h1 class="antialiased font-bold text-4xl p-10 text-center">Summarization Complete!</h1>
+
+			<div class="px-20">
+				<div class="p-5 border-2 rounded-lg text-justify overflow-scroll min-h-80 max-h-80">
+					<p class="summarizationView"></p>
+				</div>
+			</div>
+			<div class="text-center">
+				<button id="lets-do-again"
+					class="antialiased rounded-xl p-5 shadow-lg bg-rose-400 hover:bg-rose-200 hover:border-rose-300 border-rose-500 border-2">Do
+					it Again!</button>
+			</div>
 		</div>
 
 	</body>

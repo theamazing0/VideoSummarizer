@@ -1,19 +1,20 @@
 const express = require('express');
-const secrets = require("./secrets.js");
-const assemblyAi = require("./assemblyAi.js")
-
+//const secrets = require("./secrets.js");
+//const assemblyAi = require("./assemblyAi.js")
+const bp = require("body-parser")
 
 const app = express();
 
-var assemblyAiKey = secrets.assemblyAiKey
+var assemblyAiKey = process.env["assembly"]
 
 // Send Web3
 app.use(express.static("./client"));
+app.use(bp.json({limit: '50mb', extended: true}))
+app.use(bp.urlencoded({limit: '50mb', extended: true }))
 
 // REST APIs
-app.post('/datablahblah', (req, res) => {
-	var data = res.body.data;
-  return res.send('GET HTTP method on user resource');
+app.get('/key', async(req, res) => {
+  res.send({key: assemblyAiKey});
 });
 
 // 
