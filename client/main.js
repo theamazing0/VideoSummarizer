@@ -16,18 +16,23 @@ $(document).ready(function() {
 		$("#fileInputBox").prop('disabled', true);
 
 		//pull input box contents
-		var input = document.getElementById("fileInputBox");
+		//var input = document.getElementById("fileInputBox");
 		// Start Sending Video File
 		//get the files
 		const file = $('#fileInputBox').prop('files')[0];
 		var link = await createLink(file);
 		console.log(link)
-		var transcript = await transcribeUrl(link["upload_url"], true);
-		console.log(transcript)
-
+		var transcriptData = await transcribeUrl(link["upload_url"], true);
+		console.log(transcriptData)
+    var transcriptChapters = transcriptData.chapters;
 		// Display Transcript In View
-		$("#summarizationView").text(transcript);
+		$("#summarizationView").text(transcriptData.text);
+    //Display Chapters
+    for (var i = 0; i < transcriptChapters.length; i++) {
+      addChapter(transcriptChapters[i])
+    }
 
+    
 		// Hide Select Card
 		$("#select-video-card").addClass("hidden");
 		$("#select-video-card").removeClass("grid");
@@ -36,6 +41,7 @@ $(document).ready(function() {
 		$("#show-transcript-card").removeClass("hidden");
 
 	});
+  
 	// React To File Selected
 	$("#fileInputBox").change(function(e) {
 		var filename = e.target.files[0].name;
@@ -54,7 +60,7 @@ $(document).ready(function() {
 		});
 		reader.readAsArrayBuffer(event.target.files[0]);*/
 	});
-	$("$lets-do-again").click( function() {
+	$("#lets-do-again").click( function() {
 		// Hide transcript Card
 		$("#show-transcript-card").addClass("hidden");
 		$("#show-transcript-card").removeClass("grid");
@@ -119,7 +125,7 @@ function getTranscript(id) {
 				.then((res) => {
 					if (res.data.status == "completed") {
 						clearInterval(n);//stop checking
-						resolve(res.data.text)
+						resolve(res.data)
 					} else {
 						console.log("current status: " + res.data.status)
 						if (res.data.status == "error")
@@ -136,7 +142,19 @@ function getTranscript(id) {
 async function transcribeUrl(url, summary) {
 	var id = await queueAudio(url, summary);
 	console.log("Request sent with id: " + id)
-	var t = await getTranscript(id)
-	console.log(t)
-	return t;
+	var data = await getTranscript(id)
+	//console.log(t)
+	return data;
+}
+
+//display info on chapters
+function addChapter(data) {
+  var title = data.gist;
+  var content = data.summary;
+  var startTime = data.start;
+  var html = '<div class = "rounded-xl shadow-2xl bg-white grid flex p-10 w-80 h-80 overflow-y-scroll">' +
+           '<h3 class="antialiased font-bold text-center">' + title + '</h3>' +
+           '<p>' + content + '</>' +
+           '</div>';
+$("#chapters-wrapper").append(html)
 }
